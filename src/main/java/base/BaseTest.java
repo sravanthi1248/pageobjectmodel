@@ -48,20 +48,8 @@ public class BaseTest
 		}
 
 		@BeforeMethod
-		public void setUp()
-		{
-			System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("--remote-allow-origins=*");
-			
-			WebDriver driver=new ChromeDriver(options);
-			driver.get("https://www.saucedemo.com/");
-			driver.manage().window().maximize();
-			
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		}
-
-		/*@Parameters("browser")
+		
+		@Parameters("browser")
 		public void setUp(String browser,Method testMethod)
 		{
 			logger=extent.createTest(testMethod.getName());
@@ -87,7 +75,8 @@ public class BaseTest
 			{
 				WebDriverManager.chromedriver().setup();
 				driver=new EdgeDriver();
-			}*/
+			}
+		}
 
 		
 		@AfterMethod
